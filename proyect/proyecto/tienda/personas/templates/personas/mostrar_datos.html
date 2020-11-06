@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mostrar datos</title>
+</head>
+<body>
+    <h1>Listado de Clientes</h1>
+    <br><br>
+    la cantidad de clientes es {{clientes | length}} <br><br>
+
+    {% for cliente in clientes %}
+
+    {{cliente.rut}} - {{cliente.nombre}} - {{cliente.apellido_paterno}}
+    {{cliente.apellido_materno}} - {{cliente.genero}} - {{cliente.foto}}<br>
+
+    {% endfor %}
+
+</body>
+</html>

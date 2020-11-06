@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo center">PCOMPONENTES</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                  <li><a href="{% url 'auth_login' %}">Iniciar Sesion</a></li>
+
+
+
+
+              </ul>
+            </div>
+        </nav>
+
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+	<h2 class='text-align-center'><strong>Registrarte Gratis!</strong></h2><br>
+<form method="post" action=".">
+  {% csrf_token %}
+  {{ form|crispy }}
+
+  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Registrarme' %}" />
+</form>
+</div>
+</div>
+
+
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3 text-align-center'>
+<p>Ya tienes cuenta? <a href="{% url 'auth_login' %}"> Iniciar Sesión.</a></p>
+</div>
+</div>
+
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Contacto y referencias</h5>
+                <p class="grey-text text-lighten-4">Nos puedes contactar en todas estas redes sociales...</p>
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                </ul>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+
+                <h5>Servicio al cliente:</h5>
+
+                <ul>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> +56 999029909</p></li>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> +56 999012309</p></li>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> 22 99029909</p></li>
+                </ul>
+
+                <br>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright PCOMPONENTES
+
+            </div>
+          </div>
+        </footer>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "personas/base.html" %}
+
+{% block tittle%} Menu {% endblock %}
+
+{% block navbar %}
+
+
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo center">PCOMPONENTES</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+              </ul>
+            </div>
+        </nav>
+
+
+
+
+
+{% endblock %}
+
+{% block carrusel %}
+
+   <h1 class="center-align white-text">Eliminar Producto</h1>
+  <form action="eliminar_el_producto" method="POST">
+     {% csrf_token %}
+
+      <label>Ingrese codigo a eliminar:</label>
+      <input type="text" name="cod_producto">
+      <input type="submit" name="opcion" value="Eliminar">
+  </form>
+{%endblock%}
+</body>
+</html>
