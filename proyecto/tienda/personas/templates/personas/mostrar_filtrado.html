@@ -1,0 +1,135 @@
+{% extends "personas/base.html" %}
+
+{% block tittle%} mostrar_filtrado{% endblock %}
+
+{% block navbar %}
+
+
+        <nav>
+            <div class="nav-wrapper">
+              <a href="menu" class="brand-logo center">PCOMPONENTES</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="{% url 'auth_login' %}">Iniciar Sesion</a></li>
+                  <li><a href="{% url 'registration_register' %}">Registrarse</a> </li>
+                  <li><a href="gabinete">Gabinetes</a></li>
+                  <li><a href="audifonos">Audifonos</a></li>
+                  <li><a href="mouses">Mouses</a></li>
+
+              </ul>
+            </div>
+        </nav>
+
+
+
+
+
+{% endblock %}
+
+{% block carrusel %}
+{% load static %}
+
+
+<section class="main" >
+
+
+
+        <h1>Filtrado de Productos</h1>
+        <br>
+
+        La cantidad de productos es:{{productos|length}}
+        <br><br>
+
+        <div class="row">
+        {% for producto in productos%}
+
+
+            <div class="col s5 card-panel #e8f5e9 green lighten-5 black-text text-darken-2">
+
+                <label class="letra black-text">Código:{{producto.cod_producto}}</label>
+                <br>
+                <label class="letra black-text">{{producto.nombre_producto}}</label>
+                <br>
+                <label class="letra black-text">Tipo de producto:{{producto.tipo_producto}}</label>
+
+            <br>
+            <img src="{{producto.foto_producto.url}}" alt="" width="200" height="200">
+            <br>
+                <a class=" btn-large waves-effect waves-teal  red">precio:${{producto.precio_producto}}</a>
+            <br>
+            </div>
+
+
+
+        {% endfor%}
+        </div>
+
+
+
+
+
+
+</section>
+
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Contacto y referencias</h5>
+                <p class="grey-text text-lighten-4">Nos puedes contactar en todas estas redes sociales...</p>
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                </ul>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+
+                <h5>Servicio al cliente:</h5>
+
+                <ul>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> +56 999029909</p></li>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> +56 999012309</p></li>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> 22 99029909</p></li>
+                </ul>
+
+                <br>
+                <a class="waves-effect waves-light btn-large" href="FAQ">Preguntas frecuentes</a>
+                <br>
+                <br>
+
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright PCOMPONENTES
+
+            </div>
+          </div>
+        </footer>
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block javascript %}
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems, options);
+          });
+    </script>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+    });</script>
+
+
+{% endblock %}

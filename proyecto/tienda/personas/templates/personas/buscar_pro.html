@@ -1,0 +1,32 @@
+{% extends "personas/base.html" %}
+
+{% block tittle%} Actualizar Producto {% endblock %}
+
+{% block navbar %}
+
+
+ <nav>
+            <div class="nav-wrapper ">
+              <a href="#" class="brand-logo center">PCOMPONENTES</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+              </ul>
+            </div>
+        </nav>
+{%endblock %}
+
+
+{%block carrusel%}
+
+   <h1 class="center-align white-text">Buscar Producto</h1>
+  <form action="ver_producto" method="POST">
+     {% csrf_token %}
+
+      <label>Ingrese codigo producto a buscar:</label>
+      <input type="text" name="cod_producto">
+      <input type="submit" name="opcion" value="Buscar">
+  </form>
+
+
+{%endblock%}
