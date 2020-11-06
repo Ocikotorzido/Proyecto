@@ -1,0 +1,82 @@
+{% extends "personas/base.html" %}
+
+{% block tittle%} Actualizar Producto {% endblock %}
+
+{% block navbar %}
+
+
+ <nav>
+            <div class="nav-wrapper ">
+              <a href="#" class="brand-logo center">PCOMPONENTES</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+              </ul>
+            </div>
+        </nav>
+{%endblock %}
+
+{%block carrusel%}
+
+    <h1 class="center-align white-text">Actualizar Producto</h1>
+    <br><br>
+    <form action="actualizar_el_producto" method="POST">
+         {% csrf_token %}
+        <input type="hidden" name="id_producto" value="{{producto.id_producto}}">
+        <label>Cod_producto     :</label><input type="text" name="cod_producto" value="{{producto.cod_producto}}"><br>
+        <label>Nombre producto  :</label><input type="text" name="nombre_producto" value="{{producto.nombre_producto}}"><br>
+        <label>Precio producto:</label><input type="text" name="precio_producto"value="{{producto.precio_producto}}"><br>
+        <label>Tipo producto:</label><input type="text" name="tipo_producto"value="{{producto.tipo_producto}}"><br>
+
+
+
+
+        <br><br>
+        <input type="submit" name="opcion" value="Actualizar producto"><br><br>
+    </form>
+
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Contacto y referencias</h5>
+                <p class="grey-text text-lighten-4">Nos puedes contactar en todas estas redes sociales...</p>
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                </ul>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+
+                <h5>Servicio al cliente:</h5>
+
+                <ul>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> +56 999029909</p></li>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> +56 999012309</p></li>
+                  <li><p class="grey-text text-lighten-3"><i class="material-icons">phone</i> 22 99029909</p></li>
+                </ul>
+
+                <br>
+                <a class="waves-effect waves-light btn-large" href="FAQ">Preguntas frecuentes</a>
+                <br>
+                <br>
+
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright PCOMPONENTES
+
+            </div>
+          </div>
+        </footer>
+
+
+
+{%endblock%}
+</body>
+</html>

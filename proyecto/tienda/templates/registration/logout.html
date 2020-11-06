@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo center">PCOMPONENTES</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                <li><a href="{% url 'auth_login' %}">Iniciar Sesion</a></li>
+
+
+
+
+              </ul>
+            </div>
+        </nav>
+
+<h3>Sesión terminada</h3>
+
+
+{% endblock %}
